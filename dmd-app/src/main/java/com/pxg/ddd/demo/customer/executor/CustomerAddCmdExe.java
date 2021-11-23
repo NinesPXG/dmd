@@ -3,7 +3,7 @@ package com.pxg.ddd.demo.customer.executor;
 
 import com.alibaba.cola.dto.Response;
 import com.alibaba.cola.exception.BizException;
-import com.pxg.ddd.demo.dto.CustomerAddCmd;
+import com.pxg.ddd.demo.dto.command.CustomerAddCmd;
 import com.pxg.ddd.demo.dto.data.ErrorCode;
 import org.springframework.stereotype.Component;
 

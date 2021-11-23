@@ -1,4 +1,4 @@
-package com.pxg.ddd.demo.dto;
+package com.pxg.ddd.demo.dto.command.query;
 
 import com.alibaba.cola.dto.Query;
 import lombok.Data;

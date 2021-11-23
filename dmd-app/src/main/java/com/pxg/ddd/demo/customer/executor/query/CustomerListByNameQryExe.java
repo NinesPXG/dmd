@@ -1,7 +1,7 @@
 package com.pxg.ddd.demo.customer.executor.query;
 
 import com.alibaba.cola.dto.MultiResponse;
-import com.pxg.ddd.demo.dto.CustomerListByNameQry;
+import com.pxg.ddd.demo.dto.command.query.CustomerListByNameQry;
 import com.pxg.ddd.demo.dto.data.CustomerDTO;
 import java.util.ArrayList;
 import java.util.List;

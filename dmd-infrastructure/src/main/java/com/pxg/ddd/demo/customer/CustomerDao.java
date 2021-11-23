@@ -3,7 +3,7 @@ package com.pxg.ddd.demo.customer;
 import lombok.Data;
 
 @Data
-public class CustomerDO{
+public class CustomerDao {
   private String customerId;
   private String memberId;
   private String globalId;

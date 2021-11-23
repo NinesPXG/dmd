@@ -1,4 +1,4 @@
-package com.pxg.ddd.demo.domain.customer;
+package com.pxg.ddd.demo.customer;
 
 /**
  * CompanyType

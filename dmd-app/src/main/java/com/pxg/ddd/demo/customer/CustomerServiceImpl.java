@@ -4,10 +4,9 @@ import com.alibaba.cola.dto.MultiResponse;
 import com.alibaba.cola.dto.Response;
 import com.alibaba.cola.catchlog.CatchAndLog;
 import com.pxg.ddd.demo.api.CustomerServiceI;
-import com.pxg.ddd.demo.dto.CustomerAddCmd;
-import com.pxg.ddd.demo.dto.CustomerListByNameQry;
+import com.pxg.ddd.demo.dto.command.CustomerAddCmd;
+import com.pxg.ddd.demo.dto.command.query.CustomerListByNameQry;
 import com.pxg.ddd.demo.dto.data.CustomerDTO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pxg.ddd.demo.customer.executor.CustomerAddCmdExe;

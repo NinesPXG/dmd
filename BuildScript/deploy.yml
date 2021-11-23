@@ -1,0 +1,74 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-demo
+  labels:
+    app: service-demo
+  namespace: dmd-dev
+spec:
+  type: ClusterIp
+  ports:
+    - protocol: TCP
+      name: p-8080
+      port: 8080
+      targetport: 80
+  selector:
+    app: pod-demo
+
+---
+apiVersion: router.shift.io/v1
+kind: Router
+metadata:
+  annotations:
+    haproxy.router.shift.io.timeout: 3600
+  name: router-demo
+  labels:
+    app: router-demo
+  namespace: dmd-dev
+spec:
+  to:
+    kind: Service
+    name: service-demo
+    host: www.sample.dmd.com
+    port: p-8080
+  selector:
+    app: service-demo
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-demo
+  labels:
+    app: deployment-demo
+  namespace: dmd-dev
+spec:
+  selector:
+    matchLabels:
+      app: pod-demo
+  replicas: 2
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: pod-demo
+    spec:
+      containers:
+        - name: pod-demo
+          image: [image] #[image]占位
+          ports:
+            - containerPort: 80
+          args: []
+          resourse:
+            limits:
+              memory: "1Gi"
+            requests:
+              memory: "1Gi"
+            cpu:
+              memory: "1Gi"
+          env:
+            - name: sample1
+              value: "env-sample1"
+---
+# spec 描述需要的目标状态

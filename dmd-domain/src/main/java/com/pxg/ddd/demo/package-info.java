@@ -3,4 +3,4 @@
  * 
  * @author fulan.zjf
  */
-package com.pxg.ddd.demo.domain;
+package com.pxg.ddd.demo;

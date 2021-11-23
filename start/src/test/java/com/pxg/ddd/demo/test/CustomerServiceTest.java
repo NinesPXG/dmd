@@ -2,7 +2,7 @@ package com.pxg.ddd.demo.test;
 
 import com.alibaba.cola.dto.Response;
 import com.pxg.ddd.demo.api.CustomerServiceI;
-import com.pxg.ddd.demo.dto.CustomerAddCmd;
+import com.pxg.ddd.demo.dto.command.CustomerAddCmd;
 import com.pxg.ddd.demo.dto.data.CustomerDTO;
 import com.pxg.ddd.demo.dto.data.ErrorCode;
 import org.junit.Assert;
