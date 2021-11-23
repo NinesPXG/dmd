@@ -1,5 +1,6 @@
-package com.pxg.ddd.demo.customer;
+package com.pxg.ddd.demo.repository.customer;
 
+import com.pxg.ddd.demo.customer.Customer;
 import com.pxg.ddd.demo.customer.gateway.CustomerGateway;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
