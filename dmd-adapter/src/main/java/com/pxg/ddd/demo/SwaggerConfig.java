@@ -14,7 +14,14 @@ import springfox.documentation.spring.web.plugins.Docket;
 @EnableOpenApi
 public class SwaggerConfig {
 
-    // http://localhost:8080/swagger-ui/index.html
+    /**
+     * swagger-ui:  http://localhost:8080/swagger-ui/index.html
+     * knife4j:  http://localhost:8080/doc.html
+     *
+     * to do:
+     * swagger3 @Tag异常
+     * knif4j 内部自冲突
+     */
 
     @Bean
     public Docket petApi(){
