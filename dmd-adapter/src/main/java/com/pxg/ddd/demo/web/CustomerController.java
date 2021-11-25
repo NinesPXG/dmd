@@ -13,6 +13,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping(value = "customer")
 @Api(tags = "用户管理")
 public class CustomerController {
 
@@ -24,7 +25,7 @@ public class CustomerController {
         return "Hello, welcome to COLA world!";
     }
 
-    @GetMapping(value = "/customer")
+    @GetMapping(value = "/list")
     @Operation(summary = "列表查询")
     public MultiResponse<CustomerDTO> listCustomerByName(@RequestParam(required = false) String name){
         CustomerListByNameQry customerListByNameQry = new CustomerListByNameQry();
@@ -32,7 +33,7 @@ public class CustomerController {
         return customerService.listByName(customerListByNameQry);
     }
 
-    @PostMapping(value = "/customer")
+    @PostMapping(value = "/insert")
     @Operation(summary = "添加")
     public Response addCustomer(@RequestBody @Validated CustomerAddCmd customerAddCmd){
         return customerService.addCustomer(customerAddCmd);
