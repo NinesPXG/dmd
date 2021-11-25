@@ -1,6 +1,6 @@
 package com.pxg.ddd.demo.repository.customer;
 
-import com.pxg.ddd.demo.customer.Customer;
+import com.pxg.ddd.demo.domain.customer.Customer;
 import com.pxg.ddd.demo.dto.data.CustomerDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

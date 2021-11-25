@@ -1,7 +1,8 @@
 kind: DB
-sql:
-  - name: dbInit.sql
-    tool: a
-    error: exit
-    repeat: s
-    schema: sample_database
+spec:
+  sql:
+    - name: dbInit.sql
+      tool: a
+      error: exit
+      repeat: s
+      schema: sample_database

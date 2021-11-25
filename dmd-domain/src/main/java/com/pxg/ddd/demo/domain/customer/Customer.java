@@ -1,4 +1,4 @@
-package com.pxg.ddd.demo.customer;
+package com.pxg.ddd.demo.domain.customer;
 
 import com.alibaba.cola.exception.BizException;
 import lombok.Data;

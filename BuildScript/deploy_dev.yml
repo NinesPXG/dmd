@@ -31,44 +31,46 @@ spec:
     kind: Service
     name: service-demo
     host: www.sample.dmd.com
-    port: p-8080
+    port: p-8080    # name or port
   selector:
-    app: service-demo
+    app: service-demo    # label-app
 
 ---
 apiVersion: apps/v1
-kind: Deployment
+kind: Deployment    # 部署, 不建议使用 pod
 metadata:
   name: deployment-demo
   labels:
-    app: deployment-demo
+    app: deployment-demo    # application-name
   namespace: dmd-dev
-spec:
+spec:    # 描述目标状态，定义设置参数
   selector:
     matchLabels:
       app: pod-demo
-  replicas: 2
-  strategy: {}
-  template:
+  replicas: 2    # 副本数
+  strategy: {}    # 策略
+  template:    # 创建pod需要的镜像与参数设置
     metadata:
       labels:
         app: pod-demo
     spec:
       containers:
         - name: pod-demo
-          image: [image] #[image]占位
+          image: [image]    # [image]占位
           ports:
             - containerPort: 80
           args: []
           resourse:
             limits:
-              memory: "1Gi"
+              memory: "2Gi"
+              cpu: 6
             requests:
               memory: "1Gi"
-            cpu:
-              memory: "1Gi"
+              cpu: 4
           env:
             - name: sample1
               value: "env-sample1"
+            - name: sample2
+              value: "env-sample2"
 ---
-# spec 描述需要的目标状态
+

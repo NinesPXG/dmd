@@ -6,10 +6,13 @@ import com.pxg.ddd.demo.api.CustomerServiceI;
 import com.pxg.ddd.demo.dto.command.CustomerAddCmd;
 import com.pxg.ddd.demo.dto.command.query.CustomerListByNameQry;
 import com.pxg.ddd.demo.dto.data.CustomerDTO;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@Tag(name = "用户管理")
 public class CustomerController {
 
     @Autowired
@@ -21,6 +24,7 @@ public class CustomerController {
     }
 
     @GetMapping(value = "/customer")
+    @Operation(summary = "列表查询")
     public MultiResponse<CustomerDTO> listCustomerByName(@RequestParam(required = false) String name){
         CustomerListByNameQry customerListByNameQry = new CustomerListByNameQry();
         customerListByNameQry.setName(name);
@@ -28,6 +32,7 @@ public class CustomerController {
     }
 
     @PostMapping(value = "/customer")
+    @Operation(summary = "添加")
     public Response addCustomer(@RequestBody CustomerAddCmd customerAddCmd){
         return customerService.addCustomer(customerAddCmd);
     }
