@@ -20,6 +20,7 @@
         <spring-boot.version>2.5.5</spring-boot.version>
         <cola.components.version>4.0.1</cola.components.version>
         <spring-plugin.version>2.0.0.RELEASE</spring-plugin.version>
+        <log4j.version>2.17.0</log4j.version>
     </properties>
 
     <modules>
@@ -63,6 +64,11 @@
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>${mybatis-plus-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ctrip.framework.apollo</groupId>
+                <artifactId>apollo-client</artifactId>
+                <version>1.9.0</version>
             </dependency>
             <!--COLA Components-->
             <dependency>
@@ -177,6 +183,33 @@
                 <scope>test</scope>
             </dependency>
             <!-- Misc End -->
+            <!-- log4j upgrade -->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-jui</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-to-sl4j</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-sl4j-impl</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+            <!-- log4j End -->
         </dependencies>
     </dependencyManagement>
 
