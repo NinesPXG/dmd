@@ -1,10 +1,19 @@
 
+app:
+  id: dmd
+apollo:
+  bootstrap:
+    enabled: false
+    eagerLoad:
+      enabled: false
+    namespaces: application
+
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/test
-    username: root
-    password: root
+    url: jdbc:mysql://127.0.0.1:3306/test
+    username: sup
+    password: 1142302o7oP
 
 
 mybatis-plus:
